@@ -1,0 +1,36 @@
+<div class="row-12" *ngIf="students.length === 0">
+  <div class="col-4">
+
+  </div>
+  <div class="col-4">
+    <img src="https://image.flaticon.com/icons/svg/1373/1373211.svg">
+  </div>
+  <div class="col-4">
+
+  </div>
+</div>
+
+
+<div class="row-12" *ngIf="students.length > 0">
+
+
+    <button mat-raised-button color="primary" (click)="openDialog()">+ AddStudent</button>
+
+
+  <table>
+    <thead>
+      <th>รหัสบัตรประจำตัวประชาชน</th>
+      <th>ชื่อ - นามสกุล</th>
+      <th>เบอร์โทรศัพท์</th>
+    </thead>
+
+
+    <tr *ngFor="let student of students">
+      <td>{{student.fullname}}</td>
+      <td>{{student.pid}}</td>
+      <td>{{student.telno}}</td> 
+    </tr>
+
+  </table>
+
+</div>
